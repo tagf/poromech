@@ -1,0 +1,390 @@
+\documentclass[12pt]{article}
+
+\usepackage{latexsym,amsmath,amscd,amssymb,graphics,cite}
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+\usepackage{framed}
+%\usepackage[square,authoryear]{natbib}
+\usepackage[colorlinks]{hyperref}
+\usepackage{url}
+\usepackage{cite}
+\usepackage[notref,notcite]{showkeys}
+
+\usepackage[all]{xy}
+
+\newcommand{\bfi}{\bfseries\itshape}
+
+\makeatletter
+
+\@addtoreset{figure}{section}
+\def\thefigure{\thesection.\@arabic\c@figure}
+\def\fps@figure{h, t}
+\@addtoreset{table}{bsection}
+\def\thetable{\thesection.\@arabic\c@table}
+\def\fps@table{h, t}
+\@addtoreset{equation}{section}
+\def\theequation{\thesection.\arabic{equation}}
+\makeatother
+
+
+
+\newcommand{\fe}{\mathfrak{e}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\fr}{\mathfrak{r}}
+\newcommand{\fs}{\mathfrak{s}}
+\newcommand{\fz}{\mathfrak{z}}
+\newcommand{\fv}{\mathfrak{v}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\pr}{\mbox{pr}}
+
+\newcommand{\pa}{{\partial}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\K}{\mathcal{K}}
+\renewcommand{\L}{\mathcal{L}}
+%\newcommand{\Z}{\mathfrak{Z}}
+\newcommand{\Z}{\mathbf{z}}
+%\def\vvv{\vspace{3ex}}
+%\def\vv{\vspace{2ex}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{answer}[theorem]{Answer}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\numberwithin{theorem}{section}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+%\DeclareMathOperator*{\Ad}{Ad}
+%\DeclareMathOperator*{\ad}{ad}
+\def\vn{{\vec\nabla}}
+\def\he{h_E}
+\def\ho{h_O}
+\def\ve{v_E}
+\def\vo{v_O}
+\def\ce{c_E}
+\def\co{c_O}
+\def\ae{a_E}
+\def\ao{a_O}
+\def\sio{\psi_O}
+\def\sie{\psi_E}
+\def\fie{\varphi_E}
+\def\fio{\varphi_O}
+%********
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\ba{\begin{array}}
+\def\ea{\end{array}}
+\def\cA{{\mathcal A}}
+\def\cB{{\cal B}}
+\def\cC{{\mathcal C}}
+\def\cD{{\mathcal D}}
+\def\cE{{\mathcal E}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cI{{\mathcal I}}
+\def\cJ{{\mathcal J}}
+\def\cK{{\mathcal K}}
+\def\cM{{\mathcal M}}
+\def\cN{{\mathcal N}}
+\def\cO{{\mathcal O}}
+\def\cP{{\mathcal P}}
+\def\cQ{{\mathcal Q}}
+\def\cR{{\mathcal R}}
+\def\cS{{\mathcal S}}
+\def\cT{{\mathcal T}}
+ \def\cU{{\mathcal U}}
+\def\cV{{\mathcal V}}
+\def\cW{{\mathcal W}}
+\def\cX{{\mathcal X}}
+\def\cY{{\mathcal Y}}
+\def\cZ{{\mathcal Z}}
+\def\bOm{\boldsymbol{\Omega}}
+\def\hbOm{\widehat{\boldsymbol{\Omega}}}
+\def\boldeta{\boldsymbol{\eta}}
+\def\brho{\boldsymbol{\rho}}
+\def\bM{{\bf M}}
+\def\hbM{\widehat{{\bf M}}}
+\def\hM{\widehat{M}}
+
+\def\iw{\mbox{\boldmath $i$}\omega}
+\def\bi{\mbox{\boldmath $i$}}
+\def\s{\sigma}
+\def\l{\lambda}
+\def\o{\omega}
+\def\r{\rho}
+\def\L{\Lambda}
+\def\D{\Delta}
+\def\g{\gamma}
+\def\t{\theta}
+\def\m{\mu}
+\def\a{\Omega}
+\def\b{Y}
+\def\e{\epsilon}
+\def\ep{\varepsilon}
+\def\d{\delta}
+\def\n{\nu}
+\def\p{\phi}
+\def\pw{\partial w}
+\def\pt{\partial t}
+\def\px{\partial x}
+\def\pO{\partial\Omega}
+\def\G{\Gamma}
+\def\Ga{\Gamma}
+\def\O{\Omega}
+\def\xtn{\widetilde{x}_n}
+\def\dbR{{\mathop{\rm l\negthinspace R}}}
+
+
+\def\bbC{\Bbb C}
+\def\bbN{\Bbb N}
+\def\bbR{{\bf R}}
+\def\bbT{\Bbb T}
+\def\bbZ{\Bbb Z}
+\def\bbS{\Bbb S}
+\def\bbG{{\Bbb G}}
+\def\bbI{\Bbb I}
+\def\BOU{{\bold U}}
+\def\BOF{{\bold F}}
+\def\BOG{{\bf G}}
+\def\BOH{{\bf H}}
+\def\bob{{\bf b}}
+\def\boc{{\bf c}}
+\def\bog{{\bf g}}
+\def\bof{{\bold f}}
+\def\bou{{\bf u}}
+\def\boh{{\bf h}}
+\def\borho{{\bf p}}
+\def\BOD{{\bf D}}
+\def\BOL{{\bf L}}
+\def\BOB{{\bf B}}
+\def\BOK{{\bf G}}
+\def\bow{{\bf w}}
+\def\bov{{\bf v}}
+\def\boz{{\bf z}}
+\def\bga{{\mbox{\boldmath$\gamma$}}}
+\def\boy{{\bold y}}
+\def\dive{\operatorname{div\/}}
+\def\diit{\text{ {\it div\/} }}
+\def\diag{\mbox{ diag\,}}
+\def\lint{{\int\limits}}
+\def\raw{\rightarrow}
+\def\lraw{\leftrightarrow}
+\def\pa{\partial}
+\def\rarp{{x}}
+\def\bx{{\mathbf {x} }}
+\def\by{{\mathbf {y} }}
+\def\div{\mbox{div}\,}
+\def\epi{\epsilon}
+\def\vare{\varepsilon}
+\def\mum{\nu}
+\def\Dal{{\text{\!\!\!\!\!\!\qed}}}
+\def\eput#1{\put{ #1}}
+\let\<\langle
+\let \>\rangle
+%\def\pr{\par \vskip 10pt}
+\def\skp{\vskip 9pt}
+\def \qq {\pgothfamily q}
+
+
+%\newcommand{\remfigure}[1]{}%TURNS OFF FIGURES
+\newcommand{\remfigure}[1]{#1}%TURNS ON FIGURES
+\newcommand{\rem}[1]{}
+\newcommand{\tphi}{\widetilde{\phi}}
+\newcommand{\tdelta}{\widetilde{\delta}}
+\newcommand{\tI}{\widetilde{I}}
+\newcommand{\tR}{\widetilde{R}}
+\newcommand{\tv}{\widetilde{v}}
+\newcommand{\talpha}{\widetilde{\Omega}}
+\newcommand{\txi}{\widetilde{\xi}}
+\newcommand{\dR}{\dot{R}}
+\newcommand{\dv}{\dot{v}}
+\newcommand{\dmu}{\dot{\mu}}
+\newcommand{\dbeta}{\dot{Y}}
+\newcommand{\dtR}{\dot{\widetilde{R}}}
+\newcommand{\dtv}{\dot{\widetilde{v}}}
+\newcommand{\de}{\delta}
+\newcommand{\rhobar}{\overline{\rho}}
+\newcommand{\kappabar}{\overline{\kappa}}
+\newcommand{\bA}{\boldsymbol{A}}
+\newcommand{\bvarphi}{\boldsymbol{\varphi}}
+\newcommand{\bS}{\boldsymbol{S}}
+\newcommand{\bm}{\boldsymbol{m}}
+\newcommand{\bq}{\boldsymbol{q}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bPsi}{\boldsymbol{\Psi}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bX}{\boldsymbol{X}}
+\newcommand{\bK}{\boldsymbol{K}}
+\newcommand{\bw}{\boldsymbol{w}}
+\newcommand{\bphi}{\boldsymbol{\phi}}
+\newcommand{\br}{\boldsymbol{r}}
+\newcommand{\bGam}{\boldsymbol{\Gamma}}
+\newcommand{\bom}{\boldsymbol{\omega}}
+\newcommand{\bgam}{\boldsymbol{\gamma}}
+\newcommand{\bsigma}{\boldsymbol{\Sigma}}
+\newcommand{\bpsi}{\boldsymbol{\Psi}}
+\newcommand{\bOmega}{\boldsymbol{\Omega}}
+\newcommand{\bbeta}{\boldsymbol{Y}}
+\newcommand{\bxi}{\boldsymbol{\xi}}
+\newcommand{\baa}{\boldsymbol{a}}
+\newcommand{\bb}{\boldsymbol{b}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bF}{\boldsymbol{F}}
+\newcommand{\bG}{\boldsymbol{G}}
+\newcommand{\bU}{\boldsymbol{U}}
+\newcommand{\bd}{\boldsymbol{d}}
+\newcommand{\bV}{\boldsymbol{V}}
+\newcommand{\bQ}{\boldsymbol{Q}}
+\newcommand{\bZ}{\boldsymbol{Z}}
+\newcommand{\bY}{\boldsymbol{Y}}
+\newcommand{\bW}{\boldsymbol{W}}
+\newcommand{\bmu}{\boldsymbol{\mu}}
+\newcommand{\bPi}{\boldsymbol{\Pi}}
+\newcommand{\bXi}{\boldsymbol{\Xi}}
+\newcommand{\bTheta}{\boldsymbol{\Theta}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+\newcommand{\bT}{\boldsymbol{T}}
+\newcommand{\bN}{\boldsymbol{N}}
+\newcommand{\bkappa}{\boldsymbol{\kappa}}
+\newcommand{\bpi}{\boldsymbol{\pi}}
+\newcommand{\blam}{\boldsymbol{\lambda}}
+\newcommand{\bnu}{\boldsymbol{\nu}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bchi}{\boldsymbol{\chi}} 
+\newcommand{\inertia}{\mathbb{I}} 
+\newcommand{\mA}{\mathbb{A}}
+\newcommand{\mB}{\mathbb{B}}
+\newcommand{\mJ}{\mathbb{J}}
+\newcommand{\mK}{\mathbb{K}}
+\newcommand{\mD}{\mathbb{D}}
+%Differential Operators
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\newcommand{\dede}[2]{\frac{\delta #1}{\delta #2}}
+\newcommand{\prt}{\partial}
+\newcommand{\DD}[2]{\frac{D #1}{D #2}}
+
+
+%Greek Symbols
+\newcommand{\om}{\omega}
+\newcommand{\al}{\Omega}
+\newcommand{\da}{\dagger}
+\newcommand{\ka}{\kappa}
+\newcommand{\ga}{\gamma}
+\newcommand{\Om}{\Omega}
+\newcommand{\sig}{\sigma}
+
+%Brackets
+\newcommand{\lsb}{\left[}
+\newcommand{\rsb}{\right]}
+\newcommand{\lbb}{\left \langle \left\langle}
+\newcommand{\rbb}{\right \rangle\right \rangle}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\lb}{\left \langle}
+\newcommand{\rb}{\right \rangle}
+\newcommand{\lform}[2]{{\big( {#1} \big|\, {#2}\big)}}
+\newcommand{\Lform}[2]{{\Big( {#1} \Big|\, {#2}\Big)}}
+\newcommand{\scp}[2]{{\left\langle {#1}\, , \, {#2}\right\rangle}}
+
+
+%Caligraphic Letters
+\newcommand{\CX}{{\mathcal X}}
+\newcommand{\CO}{{\mathcal O}}
+\newcommand{\CL}{{\mathcal L}}
+\newcommand{\CH}{{\mathcal H}}
+\newcommand{\CA}{{\mathcal A}}
+\newcommand{\CF}{{\mathcal F}}
+\newcommand{\cL}{{\cal L}}
+
+%Useful operators
+\newcommand{\bt}{{\blacktriangle}}
+\newcommand{\di}{{\diamond}}
+
+
+%Set Symbols
+\newcommand{\mR}{{\mathbb{R}}}
+\newcommand{\mC}{{\mathbb{C}}}
+\newcommand{\mH}{{\mathbb{H}}}
+\newcommand{\mCP}{{\mathbb{CP}}}
+\newcommand{\mg}{{\mathfrak g}}
+\newcommand{\mZ}{{\mathbb{Z}}}
+
+
+%Lie Groups/Algebras
+\newcommand{\Ad}{\mbox{Ad}}
+\newcommand{\ad}{\mbox{ad}}
+\newcommand{\msu}{\mathfrak{su}}
+\newcommand{\mse}{\mathfrak{se}}
+\newcommand{\mso}{\mathfrak{so}}
+
+%Misc
+\newcommand{\id}{{\mathrm{id}}\,}
+\newcommand{\ti}{\times}
+\newcommand{\tr}{\mbox{tr}}
+\newcommand{\im}{\mbox{im}}
+\newcommand{\non}{\nonumber\\}
+\newcommand{\con}{\overline}
+\newcommand{\cst}{\text{cst}} 
+\newcommand{\sech}{\text{sech}}
+\newcommand{\bra}[1]{\left \langle #1 \right |}
+\newcommand{\ket}[1]{\left | #1 \right \rangle}
+\newcommand{\hor}{\mbox{Hor}}
+\newcommand{\ver}{\mbox{Ver}}
+
+%\newcommand{\boldeta}{\boldsymbol{\eta}}
+
+\textwidth 6.2 truein
+\oddsidemargin 0 truein
+\evensidemargin .2 truein
+\topmargin -.6 truein
+%\textheight 17 cm
+\textheight 9.1 in
+
+
+%%% Todo
+\newcommand{\todo}[1]{\vspace{5 mm}\par \noindent
+\framebox{\begin{minipage}[c]{0.95 \textwidth}
+\tt #1 \end{minipage}}\vspace{5 mm}\par}
+%%%
+
+%%% TodoDH
+\newcommand{\todoDH}[1]{\vspace{5 mm}\par \noindent
+\framebox{\begin{minipage}[c]{0.95 \textwidth}
+\color{blue}\tt DH: #1 \end{minipage}}\vspace{5 mm}\par}
+%%%
+
+\newcommand{\revision}[2]{\marginpar{#1}\textsf{\textcolor{blue}{#2}}}  %turned off for clean manuscript 
+%\newcommand{\revision}[2]{#2} 
+
+\begin{document}
+abc
+\newpage
+123
+\end{document}
